@@ -2,7 +2,7 @@
 \usepackage[utf8]    {inputenc}
 \usepackage[T1]      {fontenc}
 \usepackage{graphicx}
-\usepackage[landscape]{geometry}
+\usepackage[letterpaper, margin=.75in]{geometry}
 \usepackage{multicol}
 \usepackage{etoolbox}
 \usepackage{xstring}
@@ -11,8 +11,8 @@
 \begin{multicols*}{6}
 \raggedbottom
 
-\newcommand{\block}[1]{\includegraphics[height=6.6cm]{../images/block_#1} }
-\newcommand{\rand}[1]{\includegraphics[height=2.2cm]{../images/rand_#1} }
+\newcommand{\block}[1]{\includegraphics[height=6.9cm]{../images/block_#1} }
+\newcommand{\rand}[1]{\includegraphics[height=2.3cm]{../images/rand_#1} }
 \newcommand*{\Dive}[1]{%
     \IfInteger{#1}{\block{#1}}{\rand{#1}} \\%
 }
@@ -22,16 +22,20 @@
 
 \section*{AAA}
     $\printround{o,19,k,17}$
+    \vfill\null
+    \columnbreak
 \section*{AA}
     $\printround{c, 21, 19}$
     \vfill\null
+    \columnbreak
 \section*{A}
     $\printround{h,j,8}$
     \vfill\null
-    \pagebreak
+    \columnbreak
 \section*{RRR}
     $\printround{o,k,p}$
     \vfill\null
+    \columnbreak
 \section*{RR}
     $\printround{m,h,j}$
     \vfill\null
