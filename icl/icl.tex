@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]    {inputenc}
+\usepackage[T1]      {fontenc}
+\usepackage{graphicx}
+\usepackage[landscape]{geometry}
+\usepackage{multicol}
+\usepackage{etoolbox}
+\usepackage{xstring}
+
+\begin{document}
+\begin{multicols*}{6}
+\raggedbottom
+
+\newcommand{\block}[1]{\includegraphics[height=6.6cm]{../images/block_#1} }
+\newcommand{\rand}[1]{\includegraphics[height=2.2cm]{../images/rand_#1} }
+\newcommand*{\Dive}[1]{%
+    \IfInteger{#1}{\block{#1}}{\rand{#1}} \\%
+}
+\newcommand{\printround}[1]{%
+    \renewcommand*{\do}[1]{\Dive{##1}}% How each item is processed
+    \docsvlist{#1}}% Process CSV list
+
+\section*{AAA}
+    $\printround{o,19,k,17}$
+\section*{AA}
+    $\printround{c, 21, 19}$
+    \vfill\null
+\section*{A}
+    $\printround{h,j,8}$
+    \vfill\null
+    \pagebreak
+\section*{RRR}
+    $\printround{o,k,p}$
+    \vfill\null
+\section*{RR}
+    $\printround{m,h,j}$
+    \vfill\null
+    \columnbreak
+\section*{R}
+    $\printround{m,c}$
+    \vfill\null
+
+\end{multicols*}
+\end{document}
